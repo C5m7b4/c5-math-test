@@ -1,0 +1,47 @@
+{
+  "name": "c5-math-test",
+  "version": "0.0.1",
+  "description": "A basic math function utility",
+  "main": "index.js",
+  "files": [
+    "dist/index.js"
+  ],
+  "scripts": {
+    "prepack": "npm run build",
+    "build": "rollup -c",
+    "test": "jest",
+    "lint": "eslint src",
+    "lint:fix": "exlint src --fix",
+    "report": "start coverage/lcov-report/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.23.8",
+    "babel-jest": "^29.7.0",
+    "eslint": "^8.56.0",
+    "jest": "^29.7.0",
+    "jsdom": "^23.2.0",
+    "rollup": "^4.9.4",
+    "rollup-plugin-cleanup": "^3.2.1",
+    "rollup-plugin-filesize": "^10.0.0"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "./src/**"
+    ],
+    "coveragePathIgnorePatterns": [
+      "./src/index.ts"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 30,
+        "lines": 20,
+        "statements": 20,
+        "functions": 20
+      }
+    }
+  }
+}
